@@ -14,7 +14,7 @@ library(saqgetr)
 data_sites <- get_saq_sites()
 write.csv(data_sites, "data_sites.csv")
 europecode = data_sites["site"]
-for (siteIndex in 2915:9800){
+for (siteIndex in 0:10000){
   print(siteIndex)
   selected_site = europecode[siteIndex,]
   print(selected_site)
