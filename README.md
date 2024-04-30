@@ -2,6 +2,13 @@
 ## Introduction
 In this project, we propose a technique for analyzing the spatial heterogeneity of air pollution data in order to better understand the dynamics of air pollution over time. The method was applied to data from Europe, but it can be applied to data from anywhere in the world.
 
+## The data filtering process
+Initially, we started with 9698 different locations and used measured data from January 2017 to December 2021, recorded at 1-hour intervals. However, with the following selection criteria applied on the quality of the measured data, this reduces to a set containing 3544 sites:
+1. We only consider sites with at least one year of pollution data, equating to a minimum of 8760 (365 days × 24 hours per day) data points per pollutant, to ensure a statistically meaningful analysis and to mitigate the influence of seasonal fluctuations.
+2. In line with the US Environmental Protection Agency guidelines, we filter out sites where over 15% of readings fall below the detection limit (such measurements are often substituted by half of the limit value). This step is further justified as sites with extremely low pollution are not the main focus of this study.
+3. Sites exhibiting more than 15% repetitive data in a single measurement are filtered out, indicating
+measurements that lack precision or contain too much corrupted data.
+
 ## How to use
 1. Download data using the R code provided, utilizing the Saqgetr" package: "https://github.com/skgrange/saqgetr", saving them as csv files. It can be implemented as follow:
 ```
